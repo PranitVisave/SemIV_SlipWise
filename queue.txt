@@ -1,0 +1,45 @@
+#define maxsize 30
+
+struct queue
+{
+   int front,rear;
+   int data[maxsize];
+};
+
+struct queue q;
+
+
+void initq(struct queue *pq)
+{
+   pq->front=pq->rear=-1;
+}
+
+
+void addq(struct queue *pq,int n)
+{
+
+   pq->data[++pq->rear]=n;
+
+}
+
+
+
+int removeq(struct queue *pq)
+{
+
+   return pq->data[++pq->front];
+
+}
+
+
+int peek(struct queue *pq)
+{
+
+   return pq->data[pq->front+1];
+}
+
+
+int isempty(struct queue *pq)
+{
+   return(pq->front==pq->rear);
+}
